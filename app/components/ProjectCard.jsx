@@ -21,21 +21,11 @@ const project = {
   lastActivity: "2023-01-23",
   developer: "John Doe",
 };
-const client = {
-  id: 1,
-  name: "Tuple",
-  imageUrl: "https://tailwindui.com/plus/img/logos/48x48/tuple.svg",
-  lastInvoice: {
-    date: "December 13, 2022",
-    dateTime: "2022-12-13",
-    amount: "$2,000.00",
-    status: "Overdue",
-  },
-};
-export default function ProjectCard({ clients }) {
+
+export default function ProjectCard({ project }) {
   return (
     <>
-      <li className="overflow-hidden rounded-xl border border-gray-200">
+      <div className="overflow-hidden rounded-xl border border-gray-200">
         <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
           <div className="text-sm font-medium leading-6 text-gray-900">
             {project.projectName}
@@ -62,7 +52,7 @@ export default function ProjectCard({ clients }) {
                   href="#"
                   className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
                 >
-                  View<span className="sr-only">, {client.name}</span>
+                  View<span className="sr-only"></span>
                 </a>
               </MenuItem>
               <MenuItem>
@@ -70,7 +60,7 @@ export default function ProjectCard({ clients }) {
                   href="#"
                   className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
                 >
-                  Edit<span className="sr-only">, {client.name}</span>
+                  Edit<span className="sr-only"></span>
                 </a>
               </MenuItem>
             </MenuItems>
@@ -105,7 +95,7 @@ export default function ProjectCard({ clients }) {
             </dd>
           </div>
         </dl>
-      </li>
+      </div>
     </>
   );
 }
