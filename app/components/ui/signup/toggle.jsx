@@ -7,7 +7,7 @@ export default function Toggle() {
     const [enabled, setEnabled] = useState(false)
 
     return (
-        <Field className="flex items-center pt-12 pb-0">
+        <Field className="flex items-center pb-0">
             <Label as="span" className="mr-3 text-sm">
                 <span className="font-medium text-gray-900">Contractor</span>{' '}
             </Label>
