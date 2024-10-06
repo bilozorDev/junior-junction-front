@@ -10,7 +10,7 @@ const AuthContext = createContext();
 
 // Create a provider component
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const router = useRouter();
 
   // Simulate a logout function
