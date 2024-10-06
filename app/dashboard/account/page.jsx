@@ -67,6 +67,7 @@ const page = () => {
   const [allowMentions, setAllowMentions] = useState(true)
 
   return (
+
     <ProtectedRoute>
       <div>
 
@@ -330,6 +331,7 @@ const page = () => {
 
 
     </ProtectedRoute>
+
   );
 };
 
