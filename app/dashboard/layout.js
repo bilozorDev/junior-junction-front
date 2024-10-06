@@ -26,6 +26,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import ProtectedRoute from "../components/ProtectedRoute";
+import { useRouter } from "next/navigation";
 
 const user = {
   name: "Debbie Lewis",
@@ -43,7 +44,7 @@ const navigation = [
 const subNavigation = [
   { name: "Profile", href: "#", icon: UserCircleIcon, current: true },
   { name: "Account", href: "#", icon: CogIcon, current: false },
-  { name: "Password", href: "#", icon: KeyIcon, current: false },
+  { name: "Businesses", href: "business", icon: KeyIcon, current: false },
   { name: "Notifications", href: "#", icon: BellIcon, current: false },
   { name: "Billing", href: "#", icon: CreditCardIcon, current: false },
   { name: "Integrations", href: "#", icon: SquaresPlusIcon, current: false },
@@ -59,6 +60,7 @@ function classNames(...classes) {
 }
 
 const layout = ({ children }) => {
+  const router = useRouter()
   return (
     <ProtectedRoute>
       <div>
@@ -83,12 +85,8 @@ const layout = ({ children }) => {
                         <a
                           key={item.name}
                           href={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-black bg-opacity-25"
-                              : "hover:bg-sky-800",
-                            "rounded-md px-3 py-2 text-sm font-medium text-white"
-                          )}
+                          className={classNames(router.pathname === item.href ? "bg-black bg-opacity-25" : "hover:bg-sky-800", "rounded-md px-3 py-2 text-sm font-medium text-white")}
+                        
                         >
                           {item.name}
                         </a>
