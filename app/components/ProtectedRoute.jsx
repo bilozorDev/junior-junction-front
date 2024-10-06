@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from "next/navigation";
-import { useAuth } from "./contexts/AuthContext";
 import { useEffect } from "react";
+import { useAuth } from "./contexts/AuthContext";
 
  // This is a client-side component
 
